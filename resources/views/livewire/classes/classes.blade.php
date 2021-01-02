@@ -1,6 +1,6 @@
 <x-slot name="header">
     <h2 class="text-xl font-semibold leading-tight text-gray-800">
-        Manage todos
+        Manage classes
     </h2>
 </x-slot>
 <div class="py-12">
@@ -17,30 +17,33 @@
                 </div>
             @endif
             <button wire:click="create()"
-                class="px-4 py-2 my-3 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">Create Todo
-            </button>
+                class="px-4 py-2 my-3 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">Create new class</button>
             @if ($isOpen)
-                @include('livewire.todos.create')
+                @include('livewire.classes.create')
             @endif
             <table class="w-full table-fixed">
                 <thead>
                     <tr class="bg-gray-100">
                         <th class="w-20 px-4 py-2">No.</th>
-                        <th class="px-4 py-2">Title</th>
-                        <th class="px-4 py-2">Desc</th>
+                        <th class="px-4 py-2">class_code</th>
+                        <th class="px-4 py-2">class_name</th>
+                        <th class="px-4 py-2">teacher_id</th>
+                        {{-- <th class="px-4 py-2">subject_id</th> --}}
                         <th class="px-4 py-2">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($todos as $todo)
+                    @foreach ($classes as $class)
                         <tr>
-                            <td class="px-4 py-2 border">{{ $todo->id }}</td>
-                            <td class="px-4 py-2 border">{{ $todo->title }}</td>
-                            <td class="px-4 py-2 border">{{ $todo->description }}</td>
+                            <td class="px-4 py-2 border">{{ $class->id }}</td>
+                            <td class="px-4 py-2 border">{{ $class->class_code }}</td>
+                            <td class="px-4 py-2 border">{{ $class->class_name }}</td>
+                            <td class="px-4 py-2 border">{{ $class->teacher_id }}</td>
+                            {{-- <td class="px-4 py-2 border">{{ $class->subject_id }}</td> --}}
                             <td class="px-4 py-2 border">
-                                <button wire:click="edit({{ $todo->id }})"
+                                <button wire:click="edit({{ $class->id }})"
                                     class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">Edit</button>
-                                <button wire:click="delete({{ $todo->id }})"
+                                <button wire:click="delete({{ $class->id }})"
                                     class="px-4 py-2 font-bold text-white bg-red-500 rounded hover:bg-red-700">Delete</button>
                             </td>
                         </tr>

@@ -8,6 +8,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ReportsController;
 use App\Http\Livewire\Schools;
 use App\Http\Livewire\Todos;
+use App\Http\Livewire\Classes_Component;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/about', function () {
 
 Route::get('todos',Todos::class);
 Route::get('schools',Schools::class);
+Route::get('classes',Classes_Component::class);
 
 // Route::resource('/about', \App\Http\Controllers\AboutController::class);
 // Route::resource('/reports', \App\Http\Controllers\ReportsController::class);
