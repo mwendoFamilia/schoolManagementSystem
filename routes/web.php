@@ -16,7 +16,7 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-Route::view('/', 'home');
+Route::view('/', 'welcome');
 Route::view('/about', 'about');
 Route::view('/contact', 'contact');
 Route::get('users/{name}', [UsersController::class, 'loadView']);
@@ -32,3 +32,6 @@ Route::get('users', [UsersController::class, 'loadView']);
 //     return view('/contact',['name'=>$name]);
 // });
 // Route::get('user/{firstname},{lastname}',[User::class,'details']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
