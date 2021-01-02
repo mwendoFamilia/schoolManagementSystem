@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSchoolsTable extends Migration
+class CreateTodosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateSchoolsTable extends Migration
      */
     public function up()
     {
-        Schema::create('schools', function (Blueprint $table) {
+        Schema::create('todos', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('address_id');
-            $table->string('School_name');
-            $table->string('school_principal');
-            $table->string('other_school_details')->nullable();
+            $table->string('title');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -26,10 +24,10 @@ class CreateSchoolsTable extends Migration
     /**
      * Reverse the migrations.
      *
-     * @return void
+     * @return voidPp
      */
     public function down()
     {
-        Schema::dropIfExists('schools');
+        Schema::dropIfExists('todos');
     }
 }

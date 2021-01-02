@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
-use App\Http\Controllers\User;
+// use App\Http\Controllers\User;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ReportsController;
+use App\Http\Livewire\Schools;
+use App\Http\Livewire\Todos;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +39,17 @@ Route::get('users', [UsersController::class, 'loadView']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/reports', function () {
+    return view('reports');
+})->name('reports');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('todos',Todos::class);
+Route::get('schools',Schools::class);
+
+// Route::resource('/about', \App\Http\Controllers\AboutController::class);
+// Route::resource('/reports', \App\Http\Controllers\ReportsController::class);
