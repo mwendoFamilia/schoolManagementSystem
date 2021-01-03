@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Classes_Component extends Component
 {
-    public $classes, $class_id, $class_code, $class_name, $other_classes_details, $teacher_id;
+    public $classes, $class_id,$school_id, $class_code, $class_name, $other_classes_details, $teacher_id;
     public $isOpen = 0;
 
     public function render()
@@ -39,6 +39,7 @@ class Classes_Component extends Component
         // $this->subject_id = '';
         $this->teacher_id = '';
         $this->class_code = '';
+        $this->school_id = '';
         $this->class_name = '';
     }
 
@@ -48,12 +49,14 @@ class Classes_Component extends Component
             // 'subject_id' => 'required',
             'teacher_id' => 'required',
             'class_code' => 'required',
+            'school_id' => 'required',
             'class_name' => 'required'
         ]);
         Classes::updateOrCreate(['id' => $this->class_id], [
             // 'subject_id' => $this->subject_id,
             'teacher_id' => $this->teacher_id,
             'class_code' => $this->class_code,
+            'school_id' => $this->class_code,
             'class_name' => $this->class_name,
         ]);
         session()->flash('message', $this->class_id ? 'Classes Updated successfully' : 'Classes creted Successfuly!');
@@ -65,7 +68,8 @@ class Classes_Component extends Component
     {
         $Classess = Classes::findOrFail($id);
         $this->class_id = $id;
-        $this->Class_name = $Classess->Class_name;
+        $this->class_name = $Classess->class_name;
+        $this->school_id = $Classess->school_id;
         $this->class_code = $Classess->class_code;
         // $this->subject_id = $Classess->subject_id;
 

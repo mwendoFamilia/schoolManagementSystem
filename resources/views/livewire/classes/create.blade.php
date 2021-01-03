@@ -35,7 +35,15 @@
                                 id="exampleFormControlInput1" placeholder="Enter teacher_id" wire:model="teacher_id">
                             @error('teacher_id') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
-                      
+                        <div class="mb-4">
+                            <label for="exampleFormControlInput1"
+                                class="block mb-2 text-sm font-bold text-gray-700">school_id:</label>
+                            <input type="text"
+                                class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                id="exampleFormControlInput1" placeholder="Select school_id" wire:model="school_id">
+                            @error('school_id') <span class="text-red-500">{{ $message }}</span>@enderror
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse">

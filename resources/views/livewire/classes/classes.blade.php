@@ -28,6 +28,7 @@
                         <th class="px-4 py-2">class_code</th>
                         <th class="px-4 py-2">class_name</th>
                         <th class="px-4 py-2">teacher_id</th>
+                        <th class="px-4 py-2">school_id</th>
                         {{-- <th class="px-4 py-2">subject_id</th> --}}
                         <th class="px-4 py-2">Action</th>
                     </tr>
@@ -39,6 +40,7 @@
                             <td class="px-4 py-2 border">{{ $class->class_code }}</td>
                             <td class="px-4 py-2 border">{{ $class->class_name }}</td>
                             <td class="px-4 py-2 border">{{ $class->teacher_id }}</td>
+                            <td class="px-4 py-2 border">{{ $class->school_id }}</td>
                             {{-- <td class="px-4 py-2 border">{{ $class->subject_id }}</td> --}}
                             <td class="px-4 py-2 border">
                                 <button wire:click="edit({{ $class->id }})"
