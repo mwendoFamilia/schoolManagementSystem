@@ -23,6 +23,7 @@ class ReportFactory extends Factory
     {
         return [
             'student_id' => $this->faker->numberBetween(1,10),
+            'classes_id' => $this->faker->numberBetween(1,10),
             'report_content' => $this->faker->sentence(),
             'teachers_comments' => $this->faker->word(),
             'other_report_details' => $this->faker->sentence(),

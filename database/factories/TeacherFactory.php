@@ -24,6 +24,7 @@ class TeacherFactory extends Factory
         return [
 
             'school_id' => $this->faker->numberBetween(1, 10),
+            'classes_id' => $this->faker->numberBetween(1, 10),
             'title' => $this->faker->title(),
             'gender' => $this->faker->word(),
             'first_name' => $this->faker->firstName(),

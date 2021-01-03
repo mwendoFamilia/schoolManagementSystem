@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStudentParentsTable extends Migration
+class CreateClassesStudentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateStudentParentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('student_parents', function (Blueprint $table) {
+        Schema::create('classes_student', function (Blueprint $table) {
             $table->bigInteger('student_id');
-            $table->bigInteger('parent_id');
+            $table->bigInteger('classes_id');
+            $table->timestamp('date_from')->nullable();
+            $table->timestamp('date_to')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateStudentParentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student_parents');
+        Schema::dropIfExists('classes_student');
     }
 }

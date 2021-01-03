@@ -20,10 +20,14 @@ class Classes extends Model
     }
     public function student()
     {
-        return $this->hasMany(Student::class);
+        return $this->belongsToMany(Student::class);
     }
     public function subject()
     {
         return $this->hasMany(subject::class);
+    }
+    public function teacher()
+    {
+        return $this->hasOne(Teacher::class);
     }
 }

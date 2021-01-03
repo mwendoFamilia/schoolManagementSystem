@@ -22,7 +22,8 @@ class StudentClassFactory extends Factory
     public function definition()
     {
         return [
-            'class_id' => $this->faker->numberBetween(1, 10),
+            'classes_id' => $this->faker->numberBetween(1, 10),
+            'student_id' => $this->faker->numberBetween(1, 10),
             'date_from' => $this->faker->date(),
             'date_to' => $this->faker->date(),
         ];

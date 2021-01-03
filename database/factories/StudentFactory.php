@@ -26,6 +26,7 @@ class StudentFactory extends Factory
             'first_name'=>$this->faker->firstName,
             'middle_name'=>$this->faker->lastName,
             'last_name'=>$this->faker->lastName,
+            'school_id'=>$this->faker->numberBetween(1,10),
             'date_of_birth'=>$this->faker->date(),
             'other_student_details'=>$this->faker->sentence,
         ];

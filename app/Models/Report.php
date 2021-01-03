@@ -9,7 +9,7 @@ class Report extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id','student_id','report_content','teachers_comments','other_report_details',
+        'id','student_id','classes_id','report_content','teachers_comments','other_report_details',
     ];
 
     public function student()

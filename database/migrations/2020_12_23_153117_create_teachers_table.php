@@ -16,6 +16,7 @@ class CreateTeachersTable extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('school_id');
+            $table->bigInteger('classes_id');
             $table->string('title');
             $table->string('gender');
             $table->string('first_name');

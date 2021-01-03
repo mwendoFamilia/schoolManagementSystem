@@ -10,7 +10,7 @@ class Student extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id', 'gender', 'first_name', 'middle_name', 'last_name', 'date_of_birth', 'other_student_details'
+        'id','class_id','school_id', 'gender', 'first_name', 'middle_name', 'last_name', 'date_of_birth', 'other_student_details'
     ];
 
     public function parent()
@@ -23,7 +23,7 @@ class Student extends Model
     }
     public function class()
     {
-        return $this->belongsTo(Class_::class);
+        return $this->belongsToMany(Classes::class);
     }
 
     public function school()

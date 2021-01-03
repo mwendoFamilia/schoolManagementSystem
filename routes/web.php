@@ -58,11 +58,19 @@ Route::get('classes',Classes_Component::class);
 
 
 Route::get('test', function () {
-    $school = App\Models\School::find(0);
-    return $school->class;
-    // $category = App\Models\Student::find(3);
-    // $category = App\Models\Address::find(3);
-    // $category = App\Models\Classes::find(3);
+    // $student = App\Models\Student::find(2);
+    // return $student->class;
+    // $student = App\Models\Student::find(9);
+    // return $student->report;
+    // return $student->school;
+    // return $student->class;
+    // return $student->class;
+    // return $student->class;
+    // return $student->class;
+    // $address = App\Models\Address::find(3);
+    // return $address->school;
+    $class = App\Models\Classes::find(2);
+    return $class->subject;
     // $category = App\Models\Exam::find(3);
     // $category = App\Models\Fee::find(3);
     // $category = App\Models\Homework::find(3);

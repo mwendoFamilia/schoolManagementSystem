@@ -16,6 +16,7 @@ class CreateReportsTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('student_id');
+            $table->bigInteger('classes_id');
             $table->year('year');
             $table->bigInteger('term_id');
             $table->bigInteger('subject_id');

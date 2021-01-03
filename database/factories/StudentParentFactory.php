@@ -23,7 +23,7 @@ class StudentParentFactory extends Factory
     {
         return [
             'student_id' => $this->faker->numberBetween(1, 10),
-            'parent_id' => $this->faker->numberBetween(1, 10),
+            'parent__id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

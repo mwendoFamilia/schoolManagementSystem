@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Subject;
+use App\Models\Address_parent_;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class SubjectFactory extends Factory
+class Address_parent_Factory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Subject::class;
+    protected $model = Address_parent_::class;
 
     /**
      * Define the model's default state.
@@ -22,8 +22,8 @@ class SubjectFactory extends Factory
     public function definition()
     {
         return [
-            'classes_id' => $this->faker->numberBetween(1,10),
-            'subject_name' => $this->faker->word(),
+            'address_id' => $this->faker->numberBetween(1,10),
+            'parent__id' => $this->faker->numberBetween(1,10),
         ];
     }
 }

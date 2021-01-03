@@ -22,7 +22,7 @@ class FeeFactory extends Factory
     public function definition()
     {
         return [
-            'class_id'=>$this->faker->numberBetween(1,10), 
+            'classes_id'=>$this->faker->numberBetween(1,10), 
             'term_id'=>$this->faker->numberBetween(1,10), 
             'amount'=>$this->faker->numberBetween(1000,10000),
 
