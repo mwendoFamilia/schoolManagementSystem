@@ -108,6 +108,10 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         ```language
         php artisan make:livewire todos
         ```
+
+       ```language
+        test 
+       ```
  6. This command will create two files, which is located on following path:
      ```language
         app/Http/Livewire/Todos.php
