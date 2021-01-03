@@ -14,5 +14,21 @@ class School extends Model
         'school_principal',
         'other_school_details',
     ];
-}
 
+    public function class()
+    {
+        return $this->hasMany(Classes::class);
+    }
+    public function teacher()
+    {
+        return $this->hasMany(Teacher::class);
+    }
+    public function student()
+    {
+        return $this->hasMany(Student::class);
+    }
+    public function address()
+    {
+        return $this->belongsTo(Address::class);
+    }
+}

@@ -12,4 +12,9 @@ class StudentAddress extends Model
     protected $fillable = [
         'id','student_id','address_id','class_name','other_address_details'
     ];
+
+    // public function teacher()
+    // {
+    //     return $this->hasMany(Teacher::class);
+    // }
 }

@@ -10,6 +10,20 @@ class Classes extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id','teacher_id','class_code','class_name'
+        'id', 'teacher_id','school_id', 'class_code', 'class_name'
     ];
-}   
+
+
+    public function school()
+    {
+        return $this->belongsTo(School::class,'school_id','id');
+    }
+    public function student()
+    {
+        return $this->hasMany(Student::class);
+    }
+    public function subject()
+    {
+        return $this->hasMany(subject::class);
+    }
+}

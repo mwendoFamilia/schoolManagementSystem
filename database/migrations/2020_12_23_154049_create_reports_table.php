@@ -16,9 +16,16 @@ class CreateReportsTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('student_id');
-            $table->bigInteger('report_content');
-            $table->bigInteger('teachers_comments');
-            $table->bigInteger('other_report_details');
+            $table->year('year');
+            $table->bigInteger('term_id');
+            $table->bigInteger('subject_id');
+            $table->bigInteger('subject_score')->nullable();
+            $table->bigInteger('subject_grade')->nullable();
+            $table->bigInteger('exam_id')->nullable();
+            $table->bigInteger('test_id')->nullable();
+            $table->bigInteger('report_content')->nullable();
+            $table->bigInteger('teachers_comments')->nullable();
+            $table->bigInteger('other_report_details')->nullable();
             $table->timestamps();
         });
     }

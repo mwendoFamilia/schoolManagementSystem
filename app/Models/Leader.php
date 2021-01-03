@@ -9,6 +9,14 @@ class Leader extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id','learship_name','learship_details'
+        'id', 'learship_name', 'learship_details'
     ];
+    public function student()
+    {
+        return $this->hasMany(Student::class);
+    }
+    public function teacher()
+    {
+        return $this->hasMany(Teacher::class);
+    }
 }

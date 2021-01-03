@@ -11,4 +11,16 @@ class Address extends Model
     protected $fillable = [
         'id','address_details'
     ];
+
+    public function school()
+    {
+        return $this->hasMany(School::class);
+    }
+    
+    public function parent()
+    {
+        return $this->belongsToMany(Parent_::class);
+    }
+    
+    
 }

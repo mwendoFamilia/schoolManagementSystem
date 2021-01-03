@@ -21,6 +21,7 @@ class CreateTeachersTable extends Migration
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('last_name');   
+            $table->string('leader_id')->nullable();   
             $table->string('other_teacher_details');   
             $table->timestamps('');
         });

@@ -9,6 +9,11 @@ class Term extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id','term_name','year'
+        'id', 'term_name', 'year'
     ];
+
+    public function class()
+    {
+        return $this->belongsTo(Classes::class);
+    }
 }

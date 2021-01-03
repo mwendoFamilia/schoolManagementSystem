@@ -11,4 +11,9 @@ class Report extends Model
     protected $fillable = [
         'id','student_id','report_content','teachers_comments','other_report_details',
     ];
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 }

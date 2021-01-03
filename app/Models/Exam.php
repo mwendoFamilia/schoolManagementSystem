@@ -11,4 +11,14 @@ class Exam extends Model
     protected $fillable = [
         'id','class_id'
     ];
+
+    public function test()
+    {
+        return $this->hasMany(Test::class);
+    }
+    public function classes()
+    {
+        return $this->belongsTo(Classes::class, 'class_id', 'id');
+    }
+   
 }

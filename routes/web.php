@@ -55,3 +55,43 @@ Route::get('classes',Classes_Component::class);
 
 // Route::resource('/about', \App\Http\Controllers\AboutController::class);
 // Route::resource('/reports', \App\Http\Controllers\ReportsController::class);
+
+
+Route::get('test', function () {
+    $school = App\Models\School::find(0);
+    return $school->class;
+    // $category = App\Models\Student::find(3);
+    // $category = App\Models\Address::find(3);
+    // $category = App\Models\Classes::find(3);
+    // $category = App\Models\Exam::find(3);
+    // $category = App\Models\Fee::find(3);
+    // $category = App\Models\Homework::find(3);
+    // $category = App\Models\Leader::find(3);
+    // $category = App\Models\Parent_::find(3);
+    // $category = App\Models\Report::find(3);
+    // $category = App\Models\StudentAddress::find(3);
+    // $category = App\Models\StudentClass::find(3);
+    // $category = App\Models\StudentFee::find(3);
+    // $category = App\Models\StudentLeader::find(3);
+    // $category = App\Models\StudentParent::find(3);
+    // $category = App\Models\Subject::find(3);
+    // $category = App\Models\Teacher::find(3);
+    // $category = App\Models\Term::find(3);
+    // $category = App\Models\Test::find(3);
+    // $category = App\Models\Todo::find(3);
+    // return $category->posts;
+    // $comment = App\Models\Comment::find(152);
+    // return $comment->author;
+    // return $comment->post;
+    // $post = App\Models\Post::find(152);
+    // return $post->category;
+    // return $post->author;
+    // return $post->images;
+    // return $post->comments;
+    // return $post->tags;
+    // $tag = App\Models\Tag::find(5);
+    // return $tag->posts;
+    // $author = App\Models\User::find(88);
+    // return $author->posts;
+    // return $author->comments;
+    });

@@ -9,6 +9,11 @@ class Fee extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id','class_id','term_id','amount'
+        'id', 'class_id', 'term_id', 'amount'
     ];
+
+    public function term()
+    {
+        return $this->belongsTo(Term::class);
+    }
 }

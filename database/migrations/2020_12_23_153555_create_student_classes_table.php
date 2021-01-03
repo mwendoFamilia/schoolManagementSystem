@@ -16,6 +16,7 @@ class CreateStudentClassesTable extends Migration
         Schema::create('student_classes', function (Blueprint $table) {
             $table->id('student_id');
             $table->bigInteger('class_id');
+            $table->bigInteger('leader_id')->nullable();
             $table->timestamp('date_from')->nullable();
             $table->timestamp('date_to')->nullable();
             $table->timestamps();

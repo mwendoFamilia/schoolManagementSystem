@@ -20,6 +20,8 @@ class CreateSchoolsTable extends Migration
             $table->string('school_principal');
             $table->string('other_school_details')->nullable();
             $table->timestamps();
+
+            
         });
     }
 

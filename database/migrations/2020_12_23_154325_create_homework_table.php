@@ -16,6 +16,7 @@ class CreateHomeworkTable extends Migration
         Schema::create('homework', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('student_id');
+            $table->bigInteger('subject_id');
             $table->string('homework_content');
             $table->string('grade');
             $table->string('other_homework_details');
