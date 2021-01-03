@@ -20,12 +20,12 @@ class CreateReportsTable extends Migration
             $table->bigInteger('term_id');
             $table->bigInteger('subject_id');
             $table->bigInteger('subject_score')->nullable();
-            $table->bigInteger('subject_grade')->nullable();
+            $table->char('subject_grade')->nullable();
             $table->bigInteger('exam_id')->nullable();
             $table->bigInteger('test_id')->nullable();
-            $table->bigInteger('report_content')->nullable();
-            $table->bigInteger('teachers_comments')->nullable();
-            $table->bigInteger('other_report_details')->nullable();
+            $table->string('report_content')->nullable();
+            $table->string('teachers_comments')->nullable();
+            $table->string('other_report_details')->nullable();
             $table->timestamps();
         });
     }

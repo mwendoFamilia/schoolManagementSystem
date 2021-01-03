@@ -24,7 +24,6 @@ class StudentAddressFactory extends Factory
         return [
             'student_id' => $this->faker->numberBetween(1,10),
             'address_id' => $this->faker->numberBetween(1,10),
-            'class_name' => $this->faker->name,
             'other_address_details' => $this->faker->address,
         ];
     }

@@ -22,8 +22,8 @@ class SubjectFactory extends Factory
     public function definition()
     {
         return [
-            'class_id' => $this->faker->address,
-            'subject_name' => $this->faker->sentence,
+            'class_id' => $this->faker->numberBetween(1,10),
+            'subject_name' => $this->faker->word(),
         ];
     }
 }

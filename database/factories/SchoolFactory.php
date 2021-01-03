@@ -23,7 +23,7 @@ class SchoolFactory extends Factory
     {
         return [
             'address_id' => $this->faker->numberBetween(1,10),
-            'School_name' => $this->faker->words(2),
+            'School_name' => $this->faker->word(),
             'school_principal' => $this->faker->name,
             'other_school_details' => $this->faker->sentence,
         ];

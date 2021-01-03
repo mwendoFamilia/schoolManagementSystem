@@ -22,10 +22,11 @@ class TestFactory extends Factory
     public function definition()
     {
         return [
-            'student_id'=>$this->faker->word(), 
-            'subject_id'=>$this->faker->year(),
-            'score'=>$this->faker->year(),
-            'grade'=>$this->faker->year(),
+            'student_id'=>$this->faker->numberBetween(1,10), 
+            'subject_id'=>$this->faker->numberBetween(1,10),
+            'exam_id'=>$this->faker->numberBetween(1,10),
+            'score'=>$this->faker->numberBetween(1,10),
+            'grade'=>$this->faker->randomLetter,
         ];
     }
 }

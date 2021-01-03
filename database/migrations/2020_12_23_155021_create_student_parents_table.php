@@ -14,7 +14,7 @@ class CreateStudentParentsTable extends Migration
     public function up()
     {
         Schema::create('student_parents', function (Blueprint $table) {
-            $table->id('student_id');
+            $table->bigInteger('student_id');
             $table->bigInteger('parent_id');
             $table->timestamps();
         });

@@ -14,7 +14,6 @@ class CreateStudentFeesTable extends Migration
     public function up()
     {
         Schema::create('student_fees', function (Blueprint $table) {
-            $table->id();
             $table->bigInteger('student_id');
             $table->bigInteger('fee_balance');
             $table->timestamps();

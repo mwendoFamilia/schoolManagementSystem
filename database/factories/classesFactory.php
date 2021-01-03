@@ -7,7 +7,7 @@ use Brick\Math\BigInteger;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
-class classFactory extends Factory
+class classesFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.

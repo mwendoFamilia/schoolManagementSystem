@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTermTable extends Migration
+class CreateExamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTermTable extends Migration
      */
     public function up()
     {
-        Schema::create('term', function (Blueprint $table) {
+        Schema::create('exams', function (Blueprint $table) {
             $table->id();
-            $table->string('term_name');
-            $table->string('year');
+            $table->bigInteger
+            ('class_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateTermTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('term');
+        Schema::dropIfExists('exams');
     }
 }

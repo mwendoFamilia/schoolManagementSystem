@@ -14,7 +14,7 @@ class CreateStudentLeadersTable extends Migration
     public function up()
     {
         Schema::create('student_leaders', function (Blueprint $table) {
-            $table->id('leadership_id');
+            $table->bigInteger('leadership_id');
             $table->bigInteger('student_id');
             $table->timestamps();
         });

@@ -22,10 +22,10 @@ class ReportFactory extends Factory
     public function definition()
     {
         return [
-            'student_id' => $this->faker->word(),
-            'report_content' => $this->faker->firstName(),
-            'teachers_comments' => $this->faker->lastName(),
-            'other_report_details' => $this->faker->lastName(),
+            'student_id' => $this->faker->numberBetween(1,10),
+            'report_content' => $this->faker->sentence(),
+            'teachers_comments' => $this->faker->word(),
+            'other_report_details' => $this->faker->sentence(),
             'year' => $this->faker->year(),
             'term_id' => $this->faker->numberBetween(1,3),
             'subject_id' => $this->faker->numberBetween(1,3),

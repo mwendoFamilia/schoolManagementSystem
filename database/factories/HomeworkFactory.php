@@ -25,7 +25,7 @@ class HomeworkFactory extends Factory
             'student_id' => $this->faker->numberBetween(1, 10),
             'subject_id' => $this->faker->numberBetween(1, 10),
             'homework_content' => $this->faker->sentence(),
-            'grade' => $this->faker->text(1),
+            'grade' => $this->faker->randomLetter(),
             'other_homework_details' => $this->faker->sentence(),
         ];
     }

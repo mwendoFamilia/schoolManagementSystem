@@ -22,7 +22,9 @@ class TermFactory extends Factory
     public function definition()
     {
         return [
+
             'term_name'=>$this->faker->word(), 
+            'term_code'=>$this->faker->numberBetween(1,3), 
             'year'=>$this->faker->year(),
 
         ];

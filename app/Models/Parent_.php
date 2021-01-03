@@ -21,5 +21,6 @@ class Parent_ extends Model
         return $this->belongsToMany(Address::class);
     }
     
+    protected $table = 'parents';
 
 }
