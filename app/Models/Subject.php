@@ -17,13 +17,14 @@ class Subject extends Model
     {
         return $this->hasMany(Exam::class);
     }
+    
     public function homework()
     {
         return $this->hasMany(Homework::class);
     }
     public function teacher()
     {
-        return $this->hasMany(Teacher::class);
+        return $this->belongsToMany(Teacher::class,$table = 'subject_teachers', $foreignPivotKey = 'teacher_id', $relatedPivotKey = 'subject_id',);
     }
     public function class()
     {

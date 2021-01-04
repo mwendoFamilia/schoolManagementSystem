@@ -69,9 +69,10 @@ Route::get('test', function () {
     // return $student->class;
     // $address = App\Models\Address::find(3);
     // return $address->school;
-    $class = App\Models\Classes::find(2);
-    return $class->subject;
-    // $category = App\Models\Exam::find(3);
+    // $class = App\Models\Classes::find(2);
+    // return $class->school;
+    $category = App\Models\Term::find(3);
+    return $category->class;
     // $category = App\Models\Fee::find(3);
     // $category = App\Models\Homework::find(3);
     // $category = App\Models\Leader::find(3);

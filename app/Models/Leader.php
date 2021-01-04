@@ -9,11 +9,12 @@ class Leader extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id', 'learship_name', 'learship_details'
+        'id', 'leadership_name', 'learship_details'
     ];
     public function student()
     {
-        return $this->hasMany(Student::class);
+        return $this->belongsToMany(Student::class, $table = 'student_leaders', $foreignPivotKey = 'leadership_id', $relatedPivotKey = 'student_id'
+        );
     }
     public function teacher()
     {

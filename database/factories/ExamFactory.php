@@ -25,6 +25,10 @@ class ExamFactory extends Factory
         return [
             //
             'classes_id' => $this->faker->numberBetween(1, 10),
+            'Subject_id' => $this->faker->numberBetween(1, 10),
+            'exam_code' => $this->faker->numberBetween(1, 10),
+            'exam_name' => $this->faker->word(),
+            'other_exam_details' => $this->faker->sentence(),
 
         ];
     }

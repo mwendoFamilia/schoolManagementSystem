@@ -5,15 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Term extends Model
+class SubjectTeacher extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id', 'term_name', 'year'
+        'subject_id','teacher_id'
     ];
-
-    public function fee()
-    {
-        return $this->has(Fee::class);
-    }
 }

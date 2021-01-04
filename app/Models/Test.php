@@ -20,8 +20,8 @@ class Test extends Model
     // {
     //     return $this->belongsTo(Term::class);
     // }
-    // public function subject()
-    // {
-    //     return $this->belongsTo(Subject::class);
-    // }
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
+    }
 }

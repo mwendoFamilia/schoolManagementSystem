@@ -17,7 +17,7 @@ class Student extends Model
     {
         return $this->belongsToMany(Parent_::class);
     }
-    public function report()
+    public function reports()
     {
         return $this->hasMany(Report::class);
     }
@@ -29,5 +29,9 @@ class Student extends Model
     public function school()
     {
         return $this->belongsTo(School::class);
+    }
+    public function leadership()
+    {
+        return $this->belongsToMany(Leader::class,$table = 'student_leaders', $foreignPivotKey = 'student_id', $relatedPivotKey = 'leadership_id',);
     }
 }

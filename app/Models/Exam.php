@@ -9,7 +9,7 @@ class Exam extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id','class_id'
+        'id','class_id','Subject_id','exam_code','exam_name','other_exam_details'
     ];
 
     public function test()
@@ -18,7 +18,18 @@ class Exam extends Model
     }
     public function classes()
     {
-        return $this->belongsTo(Classes::class, 'class_id', 'id');
+        return $this->belongsTo(Classes::class, 'classes_id');
+    }
+
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
+    }
+
+    public function term()
+    {
+        return $this->belongsTo(Term::class, 'subject_id', 'id');
+        // you need to specify the foregn key and the self key incase  
     }
    
 }

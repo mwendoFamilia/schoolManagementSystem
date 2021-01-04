@@ -18,6 +18,7 @@ class Homework extends Model
     }
     public function subject()
     {
-        return $this->belongsTo(Subset::class, 'subject_id', 'id');
+        return $this->belongsTo(Subject::class, 'subject_id', 'id');
+        // you need to specify the foregn key and the self key incase  
     }
 }

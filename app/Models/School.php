@@ -15,11 +15,11 @@ class School extends Model
         'other_school_details',
     ];
 
-    public function class()
+    public function classes()
     {
         return $this->hasMany(Classes::class);
     }
-    public function teacher()
+    public function teachers()
     {
         return $this->hasMany(Teacher::class);
     }

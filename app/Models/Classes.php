@@ -26,6 +26,10 @@ class Classes extends Model
     {
         return $this->hasMany(subject::class);
     }
+    public function terms()
+    {
+        return $this->hasMany(Term::class);
+    }
     public function teacher()
     {
         return $this->hasOne(Teacher::class);

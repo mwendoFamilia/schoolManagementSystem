@@ -11,7 +11,7 @@ class Parent_ extends Model
     protected $fillable = [
         'id', 'gender', 'first_name', 'middle_name', 'last_name', 'otherparent_details'
     ];
-    public function student()
+    public function child()
     {
         return $this->belongsToMany(Student::class);
     }

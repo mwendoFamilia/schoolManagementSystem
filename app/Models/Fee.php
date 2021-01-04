@@ -16,4 +16,8 @@ class Fee extends Model
     {
         return $this->belongsTo(Term::class);
     }
+    public function class()
+    {
+        return $this->belongsTo(Classes::class);
+    }
 }
