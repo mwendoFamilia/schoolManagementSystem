@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -37,5 +38,15 @@ class DatabaseSeeder extends Seeder
         \App\Models\Todo::factory(10)->create();
         \App\Models\SubjectTeacher::factory(10)->create();
         \App\Models\Team::factory(10)->create();
+
+        DB::table('roles')->insert([
+            // ['name' => 'admin'],
+            ['name' => 'department_head'],
+            ['name' => 'class_teacher'],
+            ['name' => 'student_leader'],
+            ['name' => 'teacher'],
+            ['name' => 'student'],
+            ['name' => 'parent'],
+        ]);
     }
 }

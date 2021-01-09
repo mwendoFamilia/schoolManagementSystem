@@ -28,10 +28,7 @@ Route::get('users/{name}', [UsersController::class, 'loadView']);
 Route::get('/admin', function () {
     return redirect('/');
 });
-
 Route::get('users', [UsersController::class, 'loadView']);
-
-
 // Route::view('/admin','admin');
 // Route::get('/contact/{name}',function($name){
 //     return view('/contact',['name'=>$name]);
@@ -49,58 +46,27 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('todos',Todos::class);
-Route::get('schools',Schools::class);
-Route::get('classes',Classes_Component::class);
-
-// Route::resource('/about', \App\Http\Controllers\AboutController::class);
-// Route::resource('/reports', \App\Http\Controllers\ReportsController::class);
 
 
 Route::get('test', function () {
-    // $student = App\Models\Student::find(2);
-    // return $student->class;
-    // $student = App\Models\Student::find(9);
-    // return $student->report;
-    // return $student->school;
-    // return $student->class;
-    // return $student->class;
-    // return $student->class;
-    // return $student->class;
-    // $address = App\Models\Address::find(3);
-    // return $address->school;
-    // $class = App\Models\Classes::find(2);
-    // return $class->school;
+
     $category = App\Models\Term::find(3);
     return $category->class;
-    // $category = App\Models\Fee::find(3);
-    // $category = App\Models\Homework::find(3);
-    // $category = App\Models\Leader::find(3);
-    // $category = App\Models\Parent_::find(3);
-    // $category = App\Models\Report::find(3);
-    // $category = App\Models\StudentAddress::find(3);
-    // $category = App\Models\StudentClass::find(3);
-    // $category = App\Models\StudentFee::find(3);
-    // $category = App\Models\StudentLeader::find(3);
-    // $category = App\Models\StudentParent::find(3);
-    // $category = App\Models\Subject::find(3);
-    // $category = App\Models\Teacher::find(3);
-    // $category = App\Models\Term::find(3);
-    // $category = App\Models\Test::find(3);
-    // $category = App\Models\Todo::find(3);
-    // return $category->posts;
-    // $comment = App\Models\Comment::find(152);
-    // return $comment->author;
-    // return $comment->post;
-    // $post = App\Models\Post::find(152);
-    // return $post->category;
-    // return $post->author;
-    // return $post->images;
-    // return $post->comments;
-    // return $post->tags;
-    // $tag = App\Models\Tag::find(5);
-    // return $tag->posts;
-    // $author = App\Models\User::find(88);
-    // return $author->posts;
-    // return $author->comments;
-    });
+});
+
+Route::group([
+    'middleware' => 'auth.role', 'role' => 'admin',
+], function () {
+    // Route::get('/school', 'HomeController@index')->name('home');
+    // Route::get('/product', 'ProductController@index');
+    Route::get('todos', Todos::class);
+    Route::get('schools', Schools::class);
+});
+
+Route::group([
+    'middleware' => 'auth.role', 'role' => 'teacher',
+], function () {
+    Route::get('classes', Classes_Component::class);
+});
+
+Route::get('todos', Todos::class);
