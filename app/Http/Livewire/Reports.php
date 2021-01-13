@@ -64,6 +64,7 @@ class Reports extends Component
             'teachers_comments' => 'required',
             'grade' => 'required',
             'other_report_details' => 'required',
+        
         ]);
         Report::updateOrCreate(['id' => $this->report_id], [
             'student_id' => $this->student_id,

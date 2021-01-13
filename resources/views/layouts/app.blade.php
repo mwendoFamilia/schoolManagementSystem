@@ -25,7 +25,7 @@
     <script src="{{asset('js/charts-bars.js')}}" defer></script>
 
     @livewireStyles
-    <script>
+    <script type="module">
         import Turbolinks from 'turbolinks';
         Turbolinks.start()
     </script>

@@ -3,9 +3,10 @@
         Reports
     </h2>
     <!-- With actions -->
-    <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300">
-        Exam Reports
-    </h4>
+    <button wire:click="create()"
+        class="px-4 py-2 my-3 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">Create
+        Test
+    </button>
     <div class="w-full overflow-hidden rounded-lg shadow-xs">
         <div class="w-full overflow-x-auto">
             <table class="w-full whitespace-no-wrap">
